@@ -28,7 +28,7 @@ def getIconPath():
     return "zID_Mask.png"
 
 def getGrouping():
-    return "Ztools "
+    return "Ztools"
 
 def getDescription():
     return "ID masking Tool"
@@ -748,10 +748,11 @@ def createInstance(app,group):
     lastNode.userNatron.addParam(param)
 
     #Set param properties
-    param.setHelp("Developed by Zabander\nBased in the script nMask by Toxik\nRecommendations:\n- Use twice resolution of the beauty pass.\n- Use non AA images.\n\n")
+    param.setHelp("Developed by HuargoVfx\nBased in the script nMask by Toxik\nRecommendations:\n- Use twice resolution of the beauty pass.\n- Use non AA images.\n\n")
     param.setAddNewLine(True)
     param.setEvaluateOnChange(False)
     param.setAnimationEnabled(False)
+    param.setDefaultValue("zID Mask")
     lastNode.z_id_mask_tool = param
     del param
 
@@ -868,6 +869,7 @@ def createInstance(app,group):
     del param
 
     #Refresh the GUI with the newly created parameters
+    lastNode.setPagesOrder(['userNatron', 'Node', 'Info'])
     lastNode.refreshUserParamsGUI()
     del lastNode
 
